@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space tourism website</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="icon" href="assets/favicon-32x32.png">
+</head>
+<body>
+    
+    <div class="background">
+        <img src="assets/home/background-home-desktop.jpg" alt="background-home-desktop">
+        <img src="assets/home/background-home-tablet.jpg" alt="background-home-tablet">
+        <img src="assets/home/background-home-mobile.jpg" alt="background-home-mobile">
+       
+        <img src="assets/destination/background-destination-desktop.jpg" alt="background-destination-desktop">
+        <img src="assets/destination/background-destination-tablet.jpg" alt="background-destination-tablet">
+        <img src="assets/destination/background-destination-mobile.jpg" alt="background-destination-mobile">
+
+        <img src="assets/crew//background-crew-desktop.jpg" alt="background-crew-desktop">
+        <img src="assets/crew//background-crew-tablet.jpg" alt="background-crew-tablet">
+        <img src="assets/crew//background-crew-mobile.jpg" alt="background-crew-mobile">
+
+        <img src="assets/technology/background-technology-desktop.jpg" alt="background-technology-desktop">
+        <img src="assets/technology/background-technology-tablet.jpg" alt="background-technology-tablet">
+        <img src="assets/technology/background-technology-mobile.jpg" alt="background-technology-mobile">
+    </div>
+    
+    <header>
+        <img src="assets/shared/logo.svg" alt="logo.svg">
+        <hr>
+        <ul>
+            <a href="#" tabindex="0"><span>00</span> Home</a>
+            <a href="#" tabindex="0"><span>01</span> Destination</a>
+            <a href="#" tabindex="0"><span>02</span> Crew</a>
+            <a href="#" tabindex="0"><span>03</span> Technology</a>
+        </ul>
+       <img id="icon-hamburger" src="assets/shared/icon-hamburger.svg" alt="icon-hamburger">
+       <img id="icon-close" src="assets/shared/icon-close.svg" alt="icon-close">
+    </header>
+
+    <main>
+        <div class="home" >
+            <div class="home-content">
+                <h2>So, you want to travel to</h2><br><br>
+                <h1>Space</h1><br><br>
+                <p>
+                    Let's face it; if you want to go to space, you might as well genuinely go to 
+                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                    because we'll give you a truly out of this world experience!
+                </p><br><br>
+            </div>
+         
+                <button id="explore">Explore</button>    
+        
+        </div>
+
+        <div class="destination" style="display: none;" >
+            <div class="destination-content">
+                <div class="dest-left-content">
+                    <h2 id="title"><span>01</span> Pick your destination</h2>
+                    <img id="planet-img" src="assets/destination/image-moon.png" alt="image-moon">
+                </div>
+
+                <div class="dest-right-content">
+                        <div class="select-dest">
+                            <button>Moon</button>
+                            <button>Mars</button>
+                            <button>Europa</button>
+                            <button>Titan</button>
+                        </div>
+                        <br><br>
+                        <h1 id="destination-name">Moon</h1>
+                        <p id="description">
+                            See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+                            regain perspective and come back refreshed. While you’re there, take in some history 
+                            by visiting the Luna 2 and Apollo 11 landing sites.
+                        </p>
+                        <div id="line"></div>
+                        <div class="distance-time">
+                            <div>
+                                <h1>Avg. distance</h1><br>
+                                <h3 id="distance">384,400 km</h3>
+                            </div>
+
+                            <div>
+                                <h1>Est. travel time</h1><br>
+                                <h3 id="time">3 days</h3>
+                            </div>
+
+                        </div>
+
+                </div>
+
+               
+                    
+            </div>
+        </div>
+
+        <div class="crew" style="display: none;">
+
+            <h2 id="title"><span>02</span>Meet your crew</h2>
+          <div class="crew-left-content">
+                <h3 id="crew-post" >Commander</h3>
+                <h1 id="crew-name" >Douglas Hurley</h1>
+                <p id="crew-desc" >Douglas Gerald Hurley is an American engineer, 
+                    former Marine Corps pilot and former NASA astronaut. 
+                    He launched into space for the third time as commander of Crew Dragon Demo-2.
+                </p>
+                <div class="switch-cercle">
+                    <div></div> <div></div> <div></div> <div></div>
+                </div>
+          </div>
+
+          <div class="crew-right-content">
+            <img  id="crew-img" src="assets/crew/image-douglas-hurley.png" alt="image-douglas-hurley">
+          </div>
+
+        </div>
+
+        <div class="technology" style="display: none;">
+
+            <h2 id="title"><span>03</span>space launch 101</h2>
+            <div class="technology-content">
+                <div class="tech-btn">
+                    <button>01</button>
+                    <button>02</button>
+                    <button>03</button>
+                </div>
+                <div style="overflow: hidden;">
+                    <p>THE TERMINOLOGY…</p><br>
+                    <h1 id="tech-name">LAUNCH VEHICLE</h1><br>
+                    <p  id="tech-desc">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, 
+                        usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. 
+                        Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+                </div>
+
+            </div>
+            <img id="tech-img" src="assets/technology/image-launch-vehicle-portrait.jpg" alt="launch">
+           
+        </div>
+
+    </main>
+
+
+<script src="main.js" type="module"></script>
+</body>
+</html>
