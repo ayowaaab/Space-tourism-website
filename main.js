@@ -90,38 +90,66 @@ a_elements.forEach((el,index) =>{
 
 
 const dest_buttons=document.querySelectorAll(".select-dest button");
+const name_dest=document.querySelector("#destination-name");
+const desc_dest=document.querySelector("#description");
+const distance_dest=document.querySelector(".distance-time");
+const select_dest=document.querySelector(".select-dest");
+const dest_title=document.querySelector(".destination #title");
+const dest_img=document.querySelector("#planet-img");
+
+var dist_arr=[name_dest,desc_dest,distance_dest,select_dest,dest_title];
+var dist_blur=[name_dest,desc_dest,distance_dest,dest_img]
 
 dest_buttons[0].style.borderBottom="3px solid white";
+
 dest_buttons.forEach((el,index) =>{
     var tab_planet =[firstDist,secondDist,thirdDist,fourthDist];
     el.addEventListener("click",()=>{
         for(let i =0;i<dest_buttons.length;i++)dest_buttons[i].style.border="none";
         el.style.borderBottom="3px solid white";
-        document.querySelector("#destination-name").textContent=tab_planet[index].name;
-        document.querySelector("#description").textContent=tab_planet[index].description;
-        document.querySelector("#distance").textContent=tab_planet[index].distance;
-        document.querySelector("#time").textContent=tab_planet[index].time;
-        document.querySelector("#planet-img").src=tab_planet[index].img;
+        dist_blur.forEach(el => {el.style.filter="blur(5px)";el.style.opacity="0";el.style.transform="translateX(10%)";})
+            clearTimeout(animationTimeout); 
+            var animationTimeout = setTimeout(() => {
+                document.querySelector("#destination-name").textContent=tab_planet[index].name;
+                document.querySelector("#description").textContent=tab_planet[index].description;
+                document.querySelector("#distance").textContent=tab_planet[index].distance;
+                document.querySelector("#time").textContent=tab_planet[index].time;
+                document.querySelector("#planet-img").src=tab_planet[index].img;
+                dist_blur.forEach(el => {el.style.filter="blur(0px)";el.style.opacity="1";el.style.transform="translateX(0%)";})
+            },500);
 
     })
 })
 
+
 //!  ****************** CREW *************************
 
 const cercle = document.querySelectorAll(".switch-cercle div");
+const crew_desc=document.querySelector("#crew-desc");
+const crew_name=document.querySelector("#crew-name");
+const crew_post=document.querySelector("#crew-post");
+const crew_img=document.querySelector("#crew-img");
+var crew_arr=[crew_desc,crew_name,crew_post,crew_img];
 
 cercle.forEach((element,index) => {
     var tab_crew =[crew1,crew2,crew3,crew4];
     element.addEventListener("click",()=>{
         for(let i =0;i<cercle.length;i++)cercle[i].style.opacity=".5";
         element.style.opacity="1";
-        document.querySelector("#crew-desc").textContent=tab_crew[index].description;
-        document.querySelector("#crew-name").textContent=tab_crew[index].name;
-        document.querySelector("#crew-post").textContent=tab_crew[index].post;
-        document.querySelector("#crew-img").src=tab_crew[index].img;
+        crew_arr.forEach(el => {el.style.filter="blur(5px)";el.style.opacity="0";el.style.transform="translateX(10%)";})
+
+        clearTimeout(animationTimeout); 
+        var animationTimeout = setTimeout(() => {
+            document.querySelector("#crew-desc").textContent=tab_crew[index].description;
+            document.querySelector("#crew-name").textContent=tab_crew[index].name;
+            document.querySelector("#crew-post").textContent=tab_crew[index].post;
+            document.querySelector("#crew-img").src=tab_crew[index].img;
+            crew_arr.forEach(el => {el.style.filter="blur(0px)";el.style.opacity="1";el.style.transform="translateX(0%)";})
+        },500);
     })
     
 });
+
 
 //!  ****************** TECHNOLOGY *************************
 
@@ -132,15 +160,22 @@ const tech_desc=document.querySelector("#tech-desc");
 const tech_img=document.querySelector("#tech-img");
 
 var tab_tech =[tech_1,tech_2,tech_3];
+var tech_blur =[tech_name,tech_desc,tech_img];
 
 tech_btn.forEach((el,index) =>{
     el.addEventListener("click",()=>{
         for(let i =0;i<tech_btn.length;i++){tech_btn[i].style.backgroundColor="transparent";tech_btn[i].style.color="white"}
         el.style.backgroundColor="white";
         el.style.color="black";
-        tech_name.textContent=tab_tech[index].name;
-        tech_desc.textContent=tab_tech[index].description;
-        tech_img.src=tab_tech[index].img;
+        tech_blur.forEach(el => {el.style.filter="blur(5px)";el.style.opacity="0";el.style.transform="translateY(10%)";})
+
+        clearTimeout(animationTimeout); 
+        var animationTimeout = setTimeout(() => {
+            tech_name.textContent=tab_tech[index].name;
+            tech_desc.textContent=tab_tech[index].description;
+            tech_img.src=tab_tech[index].img;
+            tech_blur.forEach(el => {el.style.filter="blur(0px)";el.style.opacity="1";el.style.transform="translateY(0%)";})
+        },500);
     })
 
 })
@@ -154,23 +189,7 @@ const h2_home=document.querySelector(".home-content h2");
 const h1_home=document.querySelector(".home-content h1");
 const p_home=document.querySelector(".home-content p");
 const button_home=document.querySelector(".home button");
-var home_arr=[h2_home,h1_home,p_home,button_home]
-
-const name_dest=document.querySelector("#destination-name");
-const desc_dest=document.querySelector("#description");
-const distance_dest=document.querySelector(".distance-time");
-const select_dest=document.querySelector(".select-dest");
-const dest_title=document.querySelector(".destination #title");
-
-
-const crew_desc=document.querySelector("#crew-desc")
-const crew_name=document.querySelector("#crew-name")
-const crew_post=document.querySelector("#crew-post")
-const crew_img=document.querySelector("#crew-img")
-
-var home_arr=[h2_home,h1_home,p_home,button_home]
-var dist_arr=[name_dest,desc_dest,distance_dest,select_dest,dest_title];
-var crew_arr=[crew_desc,crew_name,crew_post,crew_img];
+var home_arr=[h2_home,h1_home,p_home,button_home];
 var tech_arr=[tech_name,tech_desc,tech_img,all_tech_btn];
 
 
@@ -219,7 +238,6 @@ a_elements[3].addEventListener("click",()=>{
     }, 100);
 
 })
-
 
 
 
